@@ -6,49 +6,81 @@
         {{-- Placa --}}
         <label>
             <span class="text-gray-700">Placa</span>
-            <x-admin.input type="text" wire:model="placa" />
+            <x-admin.input type="text" wire:model="carro.placa" />
+
+            @error('carro.placa')
+                <span class="text-red-700"><small>{{ $message }}</small></span>
+            @enderror
         </label>
 
         {{-- Marca --}}
         <label>
             <span class="text-gray-700">Marca</span>
-            <x-admin.input type="text" wire:model="marca" />
+            <x-admin.input type="text" wire:model="carro.marca" />
+
+            @error('carro.marca')
+                <span class="text-red-700"><small>{{ $message }}</small></span>
+            @enderror
         </label>
 
         {{-- Modelo --}}
         <label>
             <span class="text-gray-700">Modelo</span>
-            <x-admin.input type="text" wire:model="modelo" />
+            <x-admin.input type="text" wire:model="carro.modelo" />
+
+            @error('carro.modelo')
+                <span class="text-red-700"><small>{{ $message }}</small></span>
+            @enderror
         </label>
 
         {{-- Ano --}}
         <label>
             <span class="text-gray-700">Ano</span>
-            <x-admin.input type="number" wire:model="ano" />
+            <x-admin.input type="number" wire:model="carro.ano" />
+
+            @error('carro.ano')
+                <span class="text-red-700"><small>{{ $message }}</small></span>
+            @enderror
         </label>
 
         {{-- Cor --}}
         <label>
             <span class="text-gray-700">Cor</span>
-            <x-admin.input type="text" wire:model="cor" />
+            <x-admin.input type="text" wire:model="carro.cor" />
+
+            @error('carro.cor')
+                <span class="text-red-700"><small>{{ $message }}</small></span>
+            @enderror
         </label>
 
         {{-- Chassi --}}
         <label>
             <span class="text-gray-700">Chassi</span>
-            <x-admin.input type="text" wire:model="chassi" />
+            <x-admin.input type="text" wire:model="carro.chassi" />
+
+            @error('carro.chassi')
+                <span class="text-red-700"><small>{{ $message }}</small></span>
+            @enderror
         </label>
 
         {{-- Diaria --}}
         <label>
-            <span class="text-gray-700">Diaria</span>
-            <x-admin.input type="number" step="any" min="0" wire:model="diaria" />
+            <span class="text-gray-700">Valor da Diária</span>
+            <x-admin.input type="number" step="any" min="0" wire:model="carro.diaria" />
+
+            @error('carro.diaria')
+                <span class="text-red-700"><small>{{ $message }}</small></span>
+            @enderror
         </label>
 
         {{-- Descrição --}}
         <label>
             <span class="text-gray-700">Descrição</span>
-            <x-admin.textarea wire:model="descricao" />
+            <x-admin.textarea wire:model="carro.descricao" />
+
+            @error('carro.descricao')
+                <span class="text-red-700"><small>{{ $message }}</small></span>
+            @enderror
         </label>
 
         {{-- Botão de Salvar --}}
