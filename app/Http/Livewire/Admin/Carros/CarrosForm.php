@@ -31,9 +31,9 @@ class CarrosForm extends Component
     //     'required' => 'Por favor, preencha o campo :attribute',
     // ];
 
-    public function mount()
+    public function mount(Car $carro)
     {
-        $this->carro = new Car();
+        $this->carro = $carro;
     }
 
     //O método updated é chamado automaticamente pelo Livewire sempre que uma propriedade

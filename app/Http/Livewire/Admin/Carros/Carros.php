@@ -14,12 +14,15 @@ class Carros extends Component
     //Atributo que vaia armazenar o que a pessoa digitar no campo de texto da pesquisa
     public $pesquisa = '';
 
+    protected $listeners = ['deletar'];
+
     public function filtrarDados()
     {
         if(empty($this->pesquisa))
         {
             //Comando para buscar todos no banco de dados
             $this->carros = Car::all();
+
         }
         else
         {
@@ -34,6 +37,14 @@ class Carros extends Component
 
             // dd(DB::getQueryLog());
         }
+    }
+
+    public function deletar($id){
+
+        Car::destroy($id);
+
+        //vai ser com evento - está emitindo o evento
+        $this->emit('mostrarToast', 'Carro deletado com sucesso!');
     }
 
     public function render()

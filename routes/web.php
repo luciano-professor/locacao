@@ -23,6 +23,8 @@ Route::get('/', function () {
 //Rota para o componente full page do Livewire
 Route::get('/carros', Carros::class);
 Route::get('/carros/criar', CarrosForm::class);
+Route::get('/carros/{carro}/editar', CarrosForm::class);
+
 
 // Route::get('/carros', function () {
 //     return view('admin.carros');
