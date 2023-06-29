@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 //Importando o componente carros
@@ -16,6 +17,7 @@ use App\Http\Livewire\Admin\Carros\CarrosForm;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/', function () {
     return view('inicial');
 });
@@ -25,7 +27,14 @@ Route::get('/carros', Carros::class);
 Route::get('/carros/criar', CarrosForm::class);
 Route::get('/carros/{carro}/editar', CarrosForm::class);
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::get('/carros', function () {
-//     return view('admin.carros');
-// });
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
