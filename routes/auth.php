@@ -18,7 +18,7 @@ use App\Http\Livewire\Site\Login;
 Route::middleware('guest')->group(function () {
 
     //Rotas novas
-    Route::get('/login', Login::class);
+    Route::get('/login', Login::class)->name('login');
     //----------
 
     Route::get('register', [RegisteredUserController::class, 'create'])
@@ -64,6 +64,6 @@ Route::middleware('auth')->group(function () {
 
     Route::put('password', [PasswordController::class, 'update'])->name('password.update');
 
-    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
-                ->name('logout');
+    // Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
+    //             ->name('logout');
 });

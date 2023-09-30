@@ -1,11 +1,10 @@
-<aside class="fixed top-0 pb-3 px-4 h-screen border-r w-[15%] ml-0">
+<aside class="fixed top-0 pb-3 px-4 h-screen border-r w-[15%] ml-0 flex flex-col justify-between">
     <nav>
         {{-- Logo --}}
-        <div class="-mx-6 px-6 py-2 flex justify-center">
-            <a href="/">
-                <img src="{{ asset('images/car.png') }}" class="w-28" alt="Logo">
-            </a>
-        </div>
+        <x-shared.logo />
+
+        {{-- Saudacao --}}
+        <livewire:admin.saudacao />
 
         {{-- Links --}}
         <ul class="space-y-2 mt-6">
@@ -108,4 +107,7 @@
 
         </ul>
     </nav>
+
+    {{-- Logout --}}
+    <livewire:admin.logout />
 </aside>

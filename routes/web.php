@@ -20,7 +20,7 @@ use App\Http\Livewire\Admin\Carros\CarrosForm;
 
 Route::get('/', function () {
     return view('inicial');
-});
+})->middleware('auth');
 
 //Rota para o componente full page do Livewire
 Route::get('/carros', Carros::class);
